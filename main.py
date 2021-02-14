@@ -38,7 +38,7 @@ def screenshot():
   cv2.imwrite("temp.jpg", img)
 
 def compareImages():
-  imageA = cv2.imread("./templates/netflixHOG.jpg")
+  imageA = cv2.imread("./templates/HOG.jpg")
   imageB = cv2.imread("temp.jpg")
   
   s = ssim(imageA, imageB, multichannel=True)
