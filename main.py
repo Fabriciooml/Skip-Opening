@@ -1,7 +1,7 @@
 import pyscreenshot as ImageGrab
 from skimage.metrics import structural_similarity as ssim
 from skimage import exposure, feature
-import cv2
+import cv2, os
 from pyautogui import click, size, sleep
 
 global X1
@@ -42,6 +42,7 @@ def compareImages():
   imageB = cv2.imread("temp.jpg")
   
   s = ssim(imageA, imageB, multichannel=True)
+  os.remove("temp.jpg")
   
   print(s)
   if s>0.8:
